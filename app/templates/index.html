@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="description" content="Real-time healthcare translation application for patient-provider communication">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Healthcare Translator</h1>
+            <p>Bridge language barriers in healthcare communication</p>
+            <nav>
+                <a href="{{ url_for('main.index') }}" class="active">Translator</a>
+                <a href="{{ url_for('main.user_guide') }}">User Guide</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="language-selection">
+                <div class="language-pair">
+                    <div class="language-selector">
+                        <label for="source-language">Patient Language:</label>
+                        <select id="source-language">
+                            <option value="en">English</option>
+                            <option value="bn">Bengali (বাংলা)</option>
+                            <option value="es">Spanish (Español)</option>
+                            <option value="fr">French (Français)</option>
+                            <option value="zh">Chinese (中文)</option>
+                            <option value="ar">Arabic (العربية)</option>
+                            <option value="ru">Russian (Русский)</option>
+                            <option value="hi">Hindi (हिन्दी)</option>
+                            <option value="pt">Portuguese (Português)</option>
+                            <option value="de">German (Deutsch)</option>
+                            <option value="ja">Japanese (日本語)</option>
+                            <option value="ko">Korean (한국어)</option>
+                        </select>
+                    </div>
+
+                    <button id="swap-languages" aria-label="Swap languages">
+                        <span>⇄</span>
+                    </button>
+
+                    <div class="language-selector">
+                        <label for="target-language">Provider Language:</label>
+                        <select id="target-language">
+                            <option value="en" selected>English</option>
+                            <option value="bn">Bengali (বাংলা)</option>
+                            <option value="es">Spanish (Español)</option>
+                            <option value="fr">French (Français)</option>
+                            <option value="zh">Chinese (中文)</option>
+                            <option value="ar">Arabic (العربية)</option>
+                            <option value="ru">Russian (Русский)</option>
+                            <option value="hi">Hindi (हिन्दी)</option>
+                            <option value="pt">Portuguese (Português)</option>
+                            <option value="de">German (Deutsch)</option>
+                            <option value="ja">Japanese (日本語)</option>
+                            <option value="ko">Korean (한국어)</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="translation-container">
+                <div class="transcript-panel">
+                    <h2>Patient Speaks <span id="source-language-display">(English)</span></h2>
+                    <div class="controls">
+                        <button id="start-recording" class="primary">
+                            Start Recording
+                        </button>
+                        <button id="stop-recording" class="secondary" disabled>
+                            Stop Recording
+                        </button>
+                    </div>
+                    <div id="original-transcript" class="transcript"></div>
+                    <button id="play-original" class="speak-button" disabled>
+                        <span>🔊</span> Play Audio
+                    </button>
+                </div>
+
+                <div class="transcript-panel">
+                    <h2>Provider Hears <span id="target-language-display">(English)</span></h2>
+                    <div id="translation-status">Ready for translation</div>
+                    <div id="translated-transcript" class="transcript"></div>
+                    <button id="play-translation" class="speak-button" disabled>
+                        <span>🔊</span> Play Audio
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Healthcare Translator App &copy; <span id="current-year"></span> | <a href="{{ url_for('main.user_guide') }}">User Guide</a></p>
+        </footer>
+    </div>
+
+    <div id="loading-overlay" class="hidden">
+        <div class="loading-spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <div id="error-notification" class="hidden">
+        <p>An error occurred. Please try again.</p>
+        <button id="dismiss-error">Dismiss</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide - Healthcare Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="description" content="User guide for the Healthcare Translator application">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Healthcare Translator</h1>
+            <p>Bridge language barriers in healthcare communication</p>
+            <nav>
+                <a href="{{ url_for('main.index') }}">Translator</a>
+                <a href="{{ url_for('main.user_guide') }}" class="active">User Guide</a>
+            </nav>
+        </header>
+
+        <main class="user-guide">
+            <h2>User Guide</h2>
+            
+            <section class="guide-section">
+                <h3>Getting Started</h3>
+                <p>The Healthcare Translator is designed to facilitate communication between patients and healthcare providers who speak different languages. This application converts speech to text, translates it in real-time, and offers audio playback of the translation.</p>
+            </section>
+            
+            <section class="guide-section">
+                <h3>How to Use</h3>
+                <ol>
+                    <li>
+                        <strong>Select Languages:</strong>
+                        <p>Choose the patient's language from the "Patient Language" dropdown and the provider's language from the "Provider Language" dropdown. You can swap these languages using the swap button (⇄) between the dropdowns.</p>
+                    </li>
+                    <li>
+                        <strong>Start Recording:</strong>
+                        <p>Click the "Start Recording" button to begin capturing speech. Speak clearly into your device's microphone.</p>
+                    </li>
+                    <li>
+                        <strong>View Transcription:</strong>
+                        <p>As you speak, the application will transcribe your words in the "Patient Speaks" panel.</p>
+                    </li>
+                    <li>
+                        <strong>Stop Recording:</strong>
+                        <p>Click "Stop Recording" when you've finished speaking. The application will automatically translate your speech.</p>
+                    </li>
+                    <li>
+                        <strong>View Translation:</strong>
+                        <p>The translated text will appear in the "Provider Hears" panel.</p>
+                    </li>
+                    <li>
+                        <strong>Audio Playback:</strong>
+                        <p>Click the "Play Audio" button in either panel to hear the text spoken aloud in the respective language.</p>
+                    </li>
+                </ol>
+            </section>
+            
+            <section class="guide-section">
+                <h3>Tips for Best Results</h3>
+                <ul>
+                    <li>Speak clearly and at a moderate pace for the best transcription accuracy.</li>
+                    <li>Use a quiet environment to minimize background noise interference.</li>
+                    <li>Keep sentences relatively simple and avoid complex medical jargon when possible.</li>
+                    <li>Confirm understanding with the patient/provider after using the translator.</li>
+                    <li>For medical emergencies, always use professional interpreters when available.</li>
+                </ul>
+            </section>
+            
+            <section class="guide-section">
+                <h3>Supported Languages</h3>
+                <p>The Healthcare Translator currently supports the following languages:</p>
+                <ul class="language-list">
+                    <li>English</li>
+                    <li>Bengali (বাংলা)</li>
+                    <li>Spanish (Español)</li>
+                    <li>French (Français)</li>
+                    <li>Chinese (中文)</li>
+                    <li>Arabic (العربية)</li>
+                    <li>Russian (Русский)</li>
+                    <li>Hindi (हिन्दी)</li>
+                    <li>Portuguese (Português)</li>
+                    <li>German (Deutsch)</li>
+                    <li>Japanese (日本語)</li>
+                    <li>Korean (한국어)</li>
+                </ul>
+            </section>
+            
+            <section class="guide-section">
+                <h3>Privacy and Security</h3>
+                <p>The Healthcare Translator is designed with privacy in mind:</p>
+                <ul>
+                    <li>All speech processing happens on your device before being sent for translation.</li>
+                    <li>Translations are processed securely and not stored permanently.</li>
+                    <li>No patient identifiable information should be included in the conversations.</li>
+                    <li>This tool is not a substitute for HIPAA-compliant translation services in settings requiring such compliance.</li>
+                </ul>
+            </section>
+            
+            <section class="guide-section">
+                <h3>Troubleshooting</h3>
+                <ul>
+                    <li>
+                        <strong>Microphone not working:</strong>
+                        <p>Ensure you've granted microphone permissions to your browser and that your device's microphone is functioning correctly.</p>
+                    </li>
+                    <li>
+                        <strong>Translation not appearing:</strong>
+                        <p>Check your internet connection, as translation requires online access. Try stopping and restarting the recording.</p>
+                    </li>
+                    <li>
+                        <strong>Audio playback not working:</strong>
+                        <p>Ensure your device's volume is turned up and that you've granted audio permissions to the browser.</p>
+                    </li>
+                </ul>
+            </section>
+            
+            <section class="guide-section">
+                <h3>Limitations</h3>
+                <p>Please be aware of the following limitations:</p>
+                <ul>
+                    <li>While the translator is designed to handle medical terminology, it may not perfectly translate highly specialized terms.</li>
+                    <li>The accuracy of speech recognition varies based on accent, speech clarity, and background noise.</li>
+                    <li>This tool should be used as an aid to communication, not as the sole means of conveying critical medical information.</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Healthcare Translator App &copy; <span id="current-year"></span> | <a href="{{ url_for('main.index') }}">Back to Translator</a></p>
+        </footer>
+    </div>
+    
+    <script>
+        // Set current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
