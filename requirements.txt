@@ -16,3 +16,5 @@ pytest-cov==4.1.0
 
 # Security
 PyJWT==2.8.0
+
+waitress
