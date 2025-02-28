@@ -16,4 +16,5 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     FLASK_ENV=production
 
 # Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "run:app"]
+# CMD ["gunicorn", "--bind", "0.0.0.0:8000", "run:app"]
+CMD gunicorn --bind 0.0.0.0:$PORT run:app
