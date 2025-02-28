@@ -85,28 +85,6 @@ A real-time, multilingual translation application designed for healthcare settin
 - Basic security measures are implemented to protect user privacy
 - This application is not HIPAA-compliant and should not be used for sensitive patient information
 
-## Deployment
-
-This application can be deployed to various platforms:
-
-### Vercel Deployment
-
-1. Install Vercel CLI:
-   ```bash
-   npm install -g vercel
-   ```
-
-2. Deploy to Vercel:
-   ```bash
-   vercel
-   ```
-
-### Other Deployment Options
-
-- Heroku
-- AWS Elastic Beanstalk
-- Google Cloud Run
-
 ## License
 
 This project is licensed under the Apache License - see the LICENSE file for details.
